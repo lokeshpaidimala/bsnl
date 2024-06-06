@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Javascript-from HTML</h1>
+    <div id="firstname"></div>
+    <button onclick="handleClick()">click to change color</button>
+
+    <script>
+        console.log("Hello World");
+       let firstname = document.getElementById("firstname");
+       firstname.innerhtml="Hello World-from Javascript";
+
+       function handleClick(){
+        firstname.innerHTML="button Clicked";
+        firstname.style.color="red";
+        firstname.style.fontSize="50px";
+       }
+    </script>
+</body>
+</html>

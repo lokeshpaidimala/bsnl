@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Calculator</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100vmin;
+  height: 100vmin;
+  max-width: 400px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  background: gray;
+  color: #fff;
+  font-size: 2rem;
+  text-align: right;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  flex: 4;
+}
+
+.btn {
+  background: #f9f9f9;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background: #e0e0e0;
+}
+
+.operator {
+  background: #cbc5be;
+  color: #fff;
+}
+
+.operator:hover {
+  background: #ff7700;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.equal {
+  background: gray;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.equal:hover {
+  background: #218838;
+}
+
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="btn" onclick="clearDisplay()">C</button>
+      <button class="btn" onclick="appendToDisplay('(')">(</button>
+      <button class="btn" onclick="appendToDisplay(')')">)</button>
+      <button class="btn operator" onclick="appendToDisplay('/')">/</button>
+
+      <button class="btn" onclick="appendToDisplay('7')">7</button>
+      <button class="btn" onclick="appendToDisplay('8')">8</button>
+      <button class="btn" onclick="appendToDisplay('9')">9</button>
+      <button class="btn operator" onclick="appendToDisplay('*')">*</button>
+
+      <button class="btn" onclick="appendToDisplay('4')">4</button>
+      <button class="btn" onclick="appendToDisplay('5')">5</button>
+      <button class="btn" onclick="appendToDisplay('6')">6</button>
+      <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+
+      <button class="btn" onclick="appendToDisplay('1')">1</button>
+      <button class="btn" onclick="appendToDisplay('2')">2</button>
+      <button class="btn" onclick="appendToDisplay('3')">3</button>
+      <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+
+      <button class="btn zero" onclick="appendToDisplay('0')">0</button>
+      <button class="btn" onclick="appendToDisplay('.')">.</button>
+      <button class="btn equal" onclick="calculateResult()">=</button>
+    </div>
+  </div>
+
+  <script>
+    function clearDisplay() {
+  document.getElementById('display').innerText = '0';
+}
+
+function appendToDisplay(value) {
+  const display = document.getElementById('display');
+  if (display.innerText === '0') {
+    display.innerText = value;
+  } else {
+    display.innerText += value;
+  }
+}
+
+function calculateResult() {
+  const display = document.getElementById('display');
+  try {
+    display.innerText = eval(display.innerText);
+  } catch {
+    display.innerText = 'Error';
+  }
+}
+
+  </script>
+</body>
+</html>
+
+
+                         

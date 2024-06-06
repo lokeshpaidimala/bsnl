@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .firm1 {
+            display: grid;
+            grid-template-columns: 1fr 3fr ;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="">
+        <fieldset>
+        <legend>User information</legend>
+        <div class="firm1">
+            <label for="username">Name</label>
+            <input type="Name" id="usename" placeholder="Enter user Name">
+
+            <label for="" >Password</label>
+            <input type="password">
+
+            <label for="">Email</label>
+            <input type="Email" placeholder="Enter your Email">
+
+            <label for="">Number</label>
+            <input type="Number" placeholder="Enter your number">
+
+            <label for="">Country</label>
+            <input type="text" id="Country" disabled value="India">
+
+            <label for="">Date of Birth</label>
+            <input type="date" placeholder="dd-mm-yyyy">
+
+            <label for="">Date of Submission</label>
+            <input type="date" placeholder="dd-mm-yyyy">
+            
+            <label for="">Radio</label>
+            <div>
+                <label for="">male<input type="radio" name="gender"></label>
+                <label for="">female<input type="radio" name="gender"></label>
+            </div>
+           
+            <label for="">City</label>
+            <input type="text" list="list1">
+            <datalist id="list1">
+                <option value="Vishakapatnam"></option>
+                <option value="Vijaywada"></option>
+                <option value="Banglore"></option>
+                <option value="chennai"></option>
+                <option value="hyderabad"></option>
+            </datalist>
+
+            <input type="Submit" value="Send">
+            <input type="reset" value="Cancel">
+        </div>
+    </fieldset>
+    </form>
+</body>
+</html>
